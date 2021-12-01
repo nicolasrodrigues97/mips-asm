@@ -1,0 +1,29 @@
+Register naming schemes:
+t -> registers used for temp. data handling (values of calc.)
+s -> address values which you (shouldn't) lose the reference to (saves to mem)
+a -> arguments/procedure parameters
+v -> return value
+ra -> return address
+sp -> stack pointer
+pc -> program counter
+
+Jal & jr:
+jal L1
+jr  $ra
+                                                                       	      jal --> inst.1 (pc - 4)
+jal - jumps to a label and stores PC's previous position to the $ra register  pc ---> inst.2
+jr $ra - goes back to ra
+
+Pending fixes:
+
+- Move main to the bottom of the code
+
+- Move beq/ben out of div/mult/exp etc...
+
+- Implement the stack to save the values of each register
+
+- Move register declarations to the top of the code (and away from main)
+
+To-do:
+
+- Re-read about JAL/JR/$RA/the stack/arrays in MIPS Assembly
